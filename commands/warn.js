@@ -11,6 +11,7 @@ module.exports.run = async (bot, message, args) => {
     if(!wUser) return message.reply("Couldn't find that user.");
     if(wUser.hasPermission("MANAGE_MESSAGES")) return message.reply("You can't warn this user.");
     let reason = args.join(" ").slice(22);
+    if(!reason) return message.channel.send(`${message.author} Please specify a reason to kick ${wUser}`);
 
     if(!warns[wUser.id]) warns[wUser.id] = {
         warns: 0
