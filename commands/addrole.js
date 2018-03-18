@@ -34,10 +34,10 @@ await(rMember.addRole(gRole.id));
 
 try{
     rMember.send(`Congrats, you have been given the role ${gRole.name}`)
-    message.delete().catch(O_o=>{});
 }catch(e){
     message.channel.send(`Congrats to <@${rMember.id}>, you have been given the role ${gRole.name}. We tried to DM them, but their DMs are locked.`);
     }
+    message.delete().catch(O_o=>{});
 }
 
 module.exports.help = {
