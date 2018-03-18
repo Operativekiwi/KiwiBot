@@ -32,7 +32,6 @@ module.exports.run = async (bot, message, args) => {
     }
     //end of create role
     let mutetime = args[1];
-    //if(!mutetime) return message.reply("You didn't specify a time!");
     //if mutetime isn't specified, it'll default to 10seconds
     if(!mutetime){
         mutetime = "10s"
