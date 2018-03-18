@@ -1,12 +1,8 @@
+//+tempmute @user 1s/m/h/d
 const Discord = require("discord.js");
 const ms = require("ms");
 
-//import { Permissions } from "discord.js";
-
-
 module.exports.run = async (bot, message, args) => {
-
-    //+tempmute @user 1s/m/h/d
 
     let tomute = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
     if(!tomute) return message.reply("Couldn't find user.");
