@@ -4,7 +4,6 @@ module.exports.run = async (bot, message, args) => {
         let kUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
         if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.send(`You don't have permission ${message.author}`);
         if(!kUser) return message.channel.send("Couldn't find user to kick.");
-        //if(kUser = message.author) return message.channel.send("Don't kick yourself!");
         let kReason = args.join(" ").slice(22);
         if(!kReason) return message.channel.send(`${message.author} Please specify a reason to kick ${kUser}`);
         if(kUser.hasPermission("MANAGE_MESSAGES")) return message.channel.send("That person can't be kicked!");
