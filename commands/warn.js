@@ -47,7 +47,7 @@ if(warns[wUser.id].warns == 2){
     setTimeout(function(){
         wUser.removeRole(muterole.id);
         message.channel.reply(`They have been unmuted.`);
-    })
+    }, ms(mutetime))
 }
 
 if(warns[wUser.id].warns == 3){
