@@ -27,7 +27,7 @@ let warnEmbed = new Discord.RichEmbed()
 .setDescription("Warns")
 .setAuthor(message.author.username)
 .setColor("fc6400")
-.addField("Warned User", wUser.tag)
+.addField("Temp muted User", `${wUser} with ID: ${wUser.id}`)
 .addField("Warned In", message.channel)
 .addField("Number of Warnings", warns[wUser.id].warns)
 .addField("Reason", reason);
@@ -43,17 +43,17 @@ if(warns[wUser.id].warns == 2){
 
     let mutetime = "10s";
     await(wUser.addRole(muterole.id));
-    message.channel.send(`${wUser.tag} has been temporarily muted`);
+    message.channel.send(`${wUser} has been temporarily muted`);
 
     setTimeout(function(){
         wUser.removeRole(muterole.id);
-        message.channel.reply(`They have been unmuted.`);
+        message.channel.send(`${wUser} has been unmuted.`);
     }, ms(mutetime))
 }
 
 if(warns[wUser.id].warns == 3){
     message.guild.member(wUser).ban(reason);
-    message.channel.send(`${wUser.tag} has been banned.`);
+    message.channel.send(`${wUser} has been banned.`);
 }
 
 }
