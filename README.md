@@ -1,2 +1,3 @@
-# KiwiBot
-Work in progress
+# KiwiBot Commands
+
+Commands for Kiwibot, work in progress
